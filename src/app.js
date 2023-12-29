@@ -14,13 +14,16 @@ app.use(express.json());
 //Endpoint - /api/v1/names/:id
 app.get("/api/v1/names/:id", (req, res) => {
   const userId = req.params.id;
-  const user = productNames.filter((item) => item.id === userId);
-  if (user) {
+  const user = productNames.filter(item => {
+    return item.id == userId;
+});
+  
+  if (user.length !== 0) {
     res.status(200).send({
       status: "success",
       message: "Product name fetched successfully",
       data: {
-        name:user
+        name:{...user[0]}
       },
     });
   } else {
