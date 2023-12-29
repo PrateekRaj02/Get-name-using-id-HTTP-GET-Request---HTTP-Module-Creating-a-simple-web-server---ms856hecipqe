@@ -19,7 +19,7 @@ app.get("/api/v1/names/:id", (req, res) => {
     res.status(200).send({
       status: "success",
       message: "Product name fetched successfully",
-      data: { ...user },
+      data: user,
     });
   } else {
     res.status(400).send({ "status": "failed", "message": "Not found!" }
