@@ -22,8 +22,7 @@ app.get("/api/v1/names/:id", (req, res) => {
       data: user,
     });
   } else {
-    res.status(400).send({ "status": "failed", "message": "Not found!" }
-);
+    res.status(404).send({ "status": "failed", "message": "Not found!" });
   }
 });
 
