@@ -19,10 +19,12 @@ app.get("/api/v1/names/:id", (req, res) => {
     res.status(200).send({
       status: "success",
       message: "Product name fetched successfully",
-      data: user,
+      data: {
+        name:user
+      },
     });
   } else {
-    res.status(404).send({ "status": "failed", "message": "Not found!" });
+    res.status(404).send({ status: "failed", message: "Not found!" });
   }
 });
 
