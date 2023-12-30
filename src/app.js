@@ -19,7 +19,7 @@ app.get("/api/v1/names/:id", (req, res) => {
 });
   
   if (user.length !== 0) {
-    const resObj={name:{...user[0]}};
+    const resObj={productName:{...user[0]}};
     res.status(200).send({
       status: "success",
       message: "Product name fetched successfully",
